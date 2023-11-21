@@ -1,0 +1,55 @@
+﻿@model Dictionary<string, int>
+@{
+    ViewData["Title"] = "Refresh";
+}
+
+<h2>Refresh</h2>
+<hr />
+
+<p>Refreshing the tables, deletes all contents of the tables.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Table
+            </th>
+            <th>
+                Records
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>
+                All
+            </td>
+            <td>
+                @Model.Values.Sum()
+            </td>
+            <td>
+                <a asp-controller="Home" asp-action="Refresh" asp-route-tableToDel="all">Refresh</a>
+            </td>
+        </tr>
+
+        @foreach (KeyValuePair<string, int> item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Key
+                </td>
+                <td>
+                    @item.Value
+                </td>
+                <td>
+                    <a asp-controller="Home" asp-action="Refresh" asp-route-tableToDel=@item.Key>Refresh</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

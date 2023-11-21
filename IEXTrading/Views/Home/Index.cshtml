@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>IEX Trading Application</h2>
+<hr />
+
+<div>
+    <p>
+        This application let's you fetch trading data from IEX via their public <a href="https://iextrading.com/developer/">API</a>.
+        <br />
+        <br />
+        The <a asp-area="" asp-controller="Home" asp-action="Symbols">Symbols</a> tab fetches symbols data from the
+        <a href="https://iextrading.com/developer/docs/#reference-data">IEX Reference API </a> and displays the results.
+        This data can also be saved in the local database.
+        <br />
+        The <a asp-area="" asp-controller="Home" asp-action="Quote">Quote</a> tab let's you select a Company(symbol) and fetches a quote from
+        <a href="https://iextrading.com/developer/docs/#stocks">IEX Stock API</a>.
+        The quote can also be saved in the local database.
+        <br />
+        The <a asp-area="" asp-controller="Home" asp-action="Refresh">Refresh</a> tab let's you refresh the local database, that is, remove all its contents.
+    </p>
+    <p>
+        Following learning objectives are fulfilled -
+        <ul>
+            <li>Connection to REST API.</li>
+            <li>Connection to database.</li>
+            <li>CRUD operations.</li>
+        </ul>
+    </p>
+</div>
